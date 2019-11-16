@@ -15,8 +15,6 @@ public class StoreFlower extends Flower {
         this.price = price;
     }
 
-
-
     public double getPrice() {
         return price;
     }
