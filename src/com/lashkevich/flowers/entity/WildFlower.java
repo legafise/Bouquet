@@ -3,28 +3,28 @@ package com.lashkevich.flowers.entity;
 import java.util.List;
 
 public abstract class WildFlower extends Flower {
-    private PlaceGrow placeGrow;
+    private PlaceGrow habitat;
 
-    public WildFlower(long id, String name, double height, List<Color> color, double freshness, PlaceGrow placeGrow) {
+    public WildFlower(long id, String name, double height, List<Color> color, double freshness, PlaceGrow habitat) {
         super(id, name, height, color, freshness);
-        this.placeGrow = placeGrow;
+        this.habitat = habitat;
     }
 
-    public WildFlower(long id, String name, double height, List<Color> color, double freshness, PlaceGrow placeGrow, List<Accessory> accessories) {
+    public WildFlower(long id, String name, double height, List<Color> color, double freshness, PlaceGrow habitat, List<Accessory> accessories) {
         super(id, name, height, color, freshness, accessories);
-        this.placeGrow = placeGrow;
+        this.habitat = habitat;
     }
 
-    public PlaceGrow getPlaceGrow() {
-        return placeGrow;
+    public PlaceGrow getHabitat() {
+        return habitat;
     }
 
-    public void setPlaceGrow(PlaceGrow placeGrow) {
-        this.placeGrow = placeGrow;
+    public void setHabitat(PlaceGrow habitat) {
+        this.habitat = habitat;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "; Место где растет - " + placeGrow.getInfo();
+        return super.toString() + "; Место где растет - " + habitat.getInfo();
     }
 }
