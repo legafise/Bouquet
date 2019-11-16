@@ -25,7 +25,6 @@ public enum OrdinaryStoreFlowersName {
                 return OrdinaryStoreFlowersName.values()[i];
             }
         }
-
         return null;
     }
 }
