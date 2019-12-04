@@ -9,8 +9,6 @@ public class DoubleRounding {
             throw new IllegalArgumentException();
         }
 
-        BigDecimal bigDecimal = new BigDecimal(Double.toString(value));
-        bigDecimal = bigDecimal.setScale(places, RoundingMode.HALF_UP);
-        return bigDecimal.doubleValue();
+        return new BigDecimal(Double.toString(value)).setScale(places, RoundingMode.HALF_UP).doubleValue();
     }
 }

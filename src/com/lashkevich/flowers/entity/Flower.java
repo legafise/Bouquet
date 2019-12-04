@@ -8,15 +8,15 @@ import java.util.List;
 public abstract class Flower extends Entity {
     private String name;
     private double height;
-    private List<Color> color;
+    private List<Color> colors;
     private List<Accessory> accessories;
     private double freshness;
 
-    public Flower(long id, String name, double height, List<Color> color, double freshness) {
+    public Flower(long id, String name, double height, List<Color> colors, double freshness) {
         super(id);
         this.name = name;
         this.height = height;
-        this.color = color;
+        this.colors = colors;
         this.accessories = new ArrayList<>();
         this.freshness = freshness;
     }
@@ -25,7 +25,7 @@ public abstract class Flower extends Entity {
         super(id);
         this.name = name;
         this.height = height;
-        this.color = color;
+        this.colors = color;
         this.accessories = accessories;
         this.freshness = freshness;
     }
@@ -38,12 +38,12 @@ public abstract class Flower extends Entity {
         this.height = height;
     }
 
-    public List<Color> getColor() {
-        return color;
+    public List<Color> getColors() {
+        return colors;
     }
 
-    public void setColor(ArrayList<Color> color) {
-        this.color = color;
+    public void setColors(ArrayList<Color> colors) {
+        this.colors = colors;
     }
 
     public List<Accessory> getAccessories() {
@@ -73,6 +73,6 @@ public abstract class Flower extends Entity {
     @Override
     public String toString() {
         return super.toString() + " (Название цветка - " + name + "; Высота цветка = " + height + "см; Цвет - " +
-                ColorInformation.getColorInfo(color) + "; Свежесть цветка = " + freshness + "%";
+                ColorInformation.getColorInfo(colors) + "; Свежесть цветка = " + freshness + "%";
     }
 }

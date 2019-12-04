@@ -4,28 +4,28 @@ import com.lashkevich.flowers.util.checker.SpikesChecker;
 import java.util.List;
 
 public class SpikedStoreFlowers extends StoreFlower {
-    private boolean spikes;
+    private boolean hasSpikes;
 
-    public SpikedStoreFlowers(long id, String name, double height, List<Color> color, double price, double freshness, boolean spikes) {
+    public SpikedStoreFlowers(long id, String name, double height, List<Color> color, double price, double freshness, boolean hasSpikes) {
         super(id, name, height, color, price, freshness);
-        this.spikes = spikes;
+        this.hasSpikes = hasSpikes;
     }
 
-    public SpikedStoreFlowers(long id, String name, double height, List<Color> color, double price, double freshness, boolean spikes, List<Accessory> accessories) {
+    public SpikedStoreFlowers(long id, String name, double height, List<Color> color, double price, double freshness, boolean hasSpikes, List<Accessory> accessories) {
         super(id, name, height, color, price, freshness, accessories);
-        this.spikes = spikes;
+        this.hasSpikes = hasSpikes;
     }
 
-    public boolean isSpikes() {
-        return spikes;
+    public boolean hasSpikes() {
+        return hasSpikes;
     }
 
-    public void setSpikes(boolean spikes) {
-        this.spikes = spikes;
+    public void setHasSpikes(boolean hasSpikes) {
+        this.hasSpikes = hasSpikes;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "; " + SpikesChecker.checkSpikes(spikes) + ")";
+        return super.toString() + "; " + SpikesChecker.checkSpikes(hasSpikes) + ")";
     }
 }

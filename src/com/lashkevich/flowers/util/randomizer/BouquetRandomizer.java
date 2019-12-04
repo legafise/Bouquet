@@ -1,6 +1,7 @@
 package com.lashkevich.flowers.util.randomizer;
 
 import com.lashkevich.flowers.entity.*;
+import com.lashkevich.flowers.util.checker.FlowersUnderSnowInBouquetChecker;
 import com.lashkevich.flowers.util.generator.IdGenerator;
 
 import java.util.ArrayList;
@@ -14,18 +15,7 @@ public class BouquetRandomizer {
         int numberFlowers = (int) (10 + Math.random() * 40);
 
         for (int i = 0; i < numberFlowers; i++) {
-            Flower flower = GeneralFlowerRandomizer.generateRandomFlower();
-
-            if (flower instanceof SpringFlower) {
-                SpringFlower springFlower = (SpringFlower) flower;
-                if (springFlower.hasSeem()) {
-                    flowers.add(springFlower);
-                } else {
-                    flowers.add(GeneralStoreFlowerRandomizer.generateRandomStoreFlower());
-                }
-            } else {
-                flowers.add(flower);
-            }
+            flowers.add(FlowersUnderSnowInBouquetChecker.checkFlower(GeneralFlowerRandomizer.generateRandomFlower()));
         }
 
         return (int) (Math.random() * 2) == 0 ? generateBouquet(IdGenerator.generateBouquetId(), flowers) :

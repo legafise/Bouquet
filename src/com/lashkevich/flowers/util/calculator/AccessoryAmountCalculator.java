@@ -6,12 +6,12 @@ import java.util.List;
 
 public class AccessoryAmountCalculator {
     public static double calculateAccessoryAmount(List<Accessory> accessories) {
-        double accessoryPriceCounter = 0;
+        double accessoriesPrice = 0;
 
         for (int i = 0; i < accessories.size(); i++) {
-            accessoryPriceCounter += accessories.get(i).getPrice();
+            accessoriesPrice += accessories.get(i).getPrice();
         }
 
-        return accessoryPriceCounter;
+        return accessoriesPrice;
     }
 }
