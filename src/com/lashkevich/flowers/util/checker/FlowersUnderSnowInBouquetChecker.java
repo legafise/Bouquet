@@ -7,13 +7,13 @@ import com.lashkevich.flowers.util.randomizer.GeneralStoreFlowerRandomizer;
 public class FlowersUnderSnowInBouquetChecker {
     public static Flower checkFlower(Flower flower) {
         if (flower instanceof SpringFlower) {
-            return flowersSubstitute(flower);
+            return substituteFlowers(flower);
         } else {
             return flower;
         }
     }
 
-    private static Flower flowersSubstitute(Flower flower) {
+    private static Flower substituteFlowers(Flower flower) {
         SpringFlower springFlower = (SpringFlower) flower;
         if (springFlower.hasSeem()) {
             return springFlower;
