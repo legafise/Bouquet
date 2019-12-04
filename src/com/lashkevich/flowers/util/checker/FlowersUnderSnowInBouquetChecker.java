@@ -7,14 +7,18 @@ import com.lashkevich.flowers.util.randomizer.GeneralStoreFlowerRandomizer;
 public class FlowersUnderSnowInBouquetChecker {
     public static Flower checkFlower(Flower flower) {
         if (flower instanceof SpringFlower) {
-            SpringFlower springFlower = (SpringFlower) flower;
-            if (springFlower.hasSeem()) {
-                return springFlower;
-            } else {
-                return GeneralStoreFlowerRandomizer.generateRandomStoreFlower();
-            }
+            return flowersSubstitute(flower);
         } else {
             return flower;
+        }
+    }
+
+    private static Flower flowersSubstitute(Flower flower) {
+        SpringFlower springFlower = (SpringFlower) flower;
+        if (springFlower.hasSeem()) {
+            return springFlower;
+        } else {
+            return GeneralStoreFlowerRandomizer.generateRandomStoreFlower();
         }
     }
 }
