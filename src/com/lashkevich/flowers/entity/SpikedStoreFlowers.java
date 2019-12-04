@@ -16,7 +16,7 @@ public class SpikedStoreFlowers extends StoreFlower {
         this.hasSpikes = hasSpikes;
     }
 
-    public boolean isHasSpikes() {
+    public boolean hasSpikes() {
         return hasSpikes;
     }
 
